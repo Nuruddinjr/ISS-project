@@ -1349,6 +1349,20 @@ demo = {
                 align: align
             }
         });
+    },
+
+    register: function(event) {
+        event.preventDefault();
+
+        $register_form = $("#register-form");
+
+        localStorage.setItem("currentUser", $register_form.serialize());
+
+        console.log($register_form.serialize());
+        
+        $(location).attr('href','./user.html')
+        
+        return false;
     }
 
 }
